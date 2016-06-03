@@ -55,7 +55,7 @@ plugins=(aws git common-aliases debian docker docker-compose httpie sudo systemd
 
 # User configuration
 
-export PATH="/home/piontec/bin:/usr/local/bin:/home/piontec/bin:/usr/local/bin:/home/piontec/tools/google-cloud-sdk/bin:/home/piontec/.dnx/runtimes/dnx-mono.1.0.0-beta6-12004/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/piontec/omnetpp/INET/bin/:/opt/maven3/bin/"
+export PATH="/home/piontec/bin:/usr/local/bin:/home/piontec/bin:/usr/local/bin:/home/piontec/tools/google-cloud-sdk/bin:/home/piontec/.dnx/runtimes/dnx-mono.1.0.0-beta6-12004/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/piontec/omnetpp/INET/bin/:/opt/maven3/bin/:/opt/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -67,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
