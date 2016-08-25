@@ -1,0 +1,6 @@
+- hosts: localhost
+  roles:
+    - ubuntu-common-cli
+    - network-utils-cli_virt
+    - virt-and-containers_virt
+    - ubuntu-gui
