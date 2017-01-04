@@ -10,7 +10,7 @@
 	graph = log --graph --decorate --pretty=format:\"%C(red bold)%h%x09%Cgreen%d%Creset%x20%s%x20%Cblue(%an)%Creset\"
 	st = status
 	unstage = reset HEAD --
-	pl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" origin/production..origin/master
+	pl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" 
 
 [push]
 	default = simple
