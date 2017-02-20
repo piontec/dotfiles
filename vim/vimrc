@@ -1,7 +1,21 @@
+set nocompatible
+let mapleader = ','
+set hidden
+" move between lines in editor, not lines in the file (line wraps)
+nnoremap j gj
+nnoremap k gk
+
+" mv between windows
+nnoremap <silent> <C-l> <c-w>l
+nnoremap <silent> <C-h> <c-w>h
+nnoremap <silent> <C-k> <c-w>k
+nnoremap <silent> <C-j> <c-w>j
+
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
+"  Plugin 'liuchengxu/vim-better-default'
   Plugin 'bling/vim-airline'
   Plugin 'ekalinin/Dockerfile.vim'
 "  Plugin 'jlanzarotta/bufexplorer'
@@ -30,11 +44,8 @@ call vundle#begin()
 "  Plugin 'chriskempson/base16-vim'
 call vundle#end()
 
-" mv between windows
-nnoremap <silent> <C-l> <c-w>l
-nnoremap <silent> <C-h> <c-w>h
-nnoremap <silent> <C-k> <c-w>k
-nnoremap <silent> <C-j> <c-w>j
+runtime! plugin/default.vim
+set norelativenumber
 
 " map camel case movement
 "let g:vim_json_syntax_conceal = 0
@@ -81,7 +92,6 @@ if v:version > 704
   set regexpengine=1
 endif
 
-" NERD
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <silent> <F8> :TagbarToggle<CR>
 
@@ -91,7 +101,6 @@ let g:vim_markdown_folding_disabled = 1
 " vim-aws
 let g:AWSVimValidate = 1
 
-set nocompatible
 set hlsearch
 " tabs and firends
 set autoindent
@@ -99,7 +108,7 @@ set smartindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set textwidth=100
+"set textwidth=100
 set ignorecase 
 set smartcase
 set incsearch
@@ -186,7 +195,6 @@ nnoremap <CR> o<Esc>
 map <Esc>OM <S-CR>
 
 " Go
-let mapleader = "\\"
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 " au FileType go nmap <Leader>gd <Plug>(go-doc)
