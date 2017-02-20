@@ -1,7 +1,8 @@
 - hosts: localhost
   roles:
-    - ubuntu-common-cli
-    - network-utils-cli
-    - network-utils-gui
-    - virt-and-containers
-    - ubuntu-gui
+    - {name: ubuntu-common-cli, tags: [common-cli]}
+    - {name: network-utils-cli, tags: [utils-cli]}
+    - {name: network-utils-gui, tags: [utils-gui]}
+    - {name: virt-and-containers, tags: [virt]}
+    - {name: ubuntu-gui, tags: [ubuntu-gui]}
+    - {name: keepass2, tags: [keepass2]}

@@ -1,0 +1,15 @@
+- name: add keepass2 plugins ppa
+  apt_repository: repo="ppa:dlech/keepass2-plugins" state=present
+
+- name: Install keepass2 from esty repo
+  apt:
+    deb: "http://de.archive.ubuntu.com/ubuntu/pool/universe/k/keepass2/keepass2_2.35+dfsg-1_all.deb"
+
+- name: Install keepass2 plugins packages
+  apt: name={{ item }} state=latest update_cache=true cache_valid_time=3600
+  with_items:
+    - keepass2-plugin-application-indicator
+    - keepass2-plugin-application-menu
+    - keepass2-plugin-keeagent
+    - keepass2-plugin-keepasshttp
+    - keepass2-plugin-launcher
