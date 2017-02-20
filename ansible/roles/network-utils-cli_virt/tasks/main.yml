@@ -1,0 +1,4 @@
+- name: Install base network CLI utils
+  apt: name={{ item }} state=latest update_cache=true cache_valid_time=3600
+  with_items:
+    - openvpn
