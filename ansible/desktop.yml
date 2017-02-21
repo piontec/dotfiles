@@ -5,4 +5,4 @@
     - {name: network-utils-gui, tags: [utils-gui]}
     - {name: virt-and-containers, tags: [virt]}
     - {name: ubuntu-gui, tags: [ubuntu-gui]}
-    - {name: keepass2, tags: [keepass2]}
+    - {name: keepass2, tags: [keepass]}

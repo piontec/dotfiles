@@ -1,7 +1,7 @@
 - name: add keepass2 plugins ppa
   apt_repository: repo="ppa:dlech/keepass2-plugins" state=present
 
-- name: Install keepass2 from esty repo
+- name: Install keepass2 from zesty repo (we need 2.35)
   apt:
     deb: "http://de.archive.ubuntu.com/ubuntu/pool/universe/k/keepass2/keepass2_2.35+dfsg-1_all.deb"
 
@@ -13,3 +13,12 @@
     - keepass2-plugin-keeagent
     - keepass2-plugin-keepasshttp
     - keepass2-plugin-launcher
+
+- name: install other keepass2 plugins
+  unarchive:
+    src: "{{ item }}"
+    dest: "{{ keepass_plugins_dir }}"
+    remote_src: True
+  with_items:
+    - "http://keepass.info/extensions/v2/otpkeyprov/OtpKeyProv-{{ otk_key_prov_ver }}.zip"
+    - "https://github.com/brush701/keechallenge/releases/download/{{ kee_challenge_ver }}/KeeChallenge_{{ kee_challenge_ver }}.zip"
