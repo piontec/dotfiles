@@ -15,18 +15,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
-"  Plugin 'liuchengxu/vim-better-default'
+  Plugin 'tpope/vim-fugitive'
   Plugin 'bling/vim-airline'
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'scrooloose/nerdtree'
   Plugin 'kien/ctrlp.vim'
-"  Plugin 'LaTeX-Box-Team/LaTeX-Box'
   Plugin 'pearofducks/ansible-vim'
-"  Plugin 'majutsushi/tagbar' " for C and C++ development
-  Plugin 'tomtom/tcomment_vim'
   Plugin 'altercation/vim-colors-solarized'
-  " Plugin 'fatih/vim-go'
   " tabular always before vim-markdown
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
@@ -38,11 +34,15 @@ call vundle#begin()
 "  Plugin 'vim-scripts/ZoomWin'
   Plugin 'michaeljsmith/vim-indent-object'
   Plugin 'bkad/CamelCaseMotion'
-  "Plugin 'tpope/vim-fugitive'
+  Plugin 'tomtom/tcomment_vim'
+"  Plugin 'majutsushi/tagbar' " for C and C++ development
   "  Plugin 'Valloric/YouetompleteMe'
+  " Plugin 'fatih/vim-go'
+"  Plugin 'LaTeX-Box-Team/LaTeX-Box'
   " Plugin 'derekwyatt/vim-scala'
   "Plugin 'junegunn/goyo.vim'
 "  Plugin 'chriskempson/base16-vim'
+"  Plugin 'liuchengxu/vim-better-default'
 call vundle#end()
 
 runtime! plugin/default.vim
@@ -220,7 +220,7 @@ au BufRead /tmp/mutt-* set tw=78
 
 " Airline
 "
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme = 'wombat'
 "let g:airline#extensions#tabline#buffer_nr_show = 0
 
