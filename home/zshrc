@@ -85,7 +85,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias central-play=ansible-playbook\ --private-key\ ~/.ssh/work/central-docker-team.pem
-alias ca-play="sudo -u ops ansible-playbook"
+alias ca-play="sudo -u ops ansible-playbook -u ansible"
 unalias cp
 unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
