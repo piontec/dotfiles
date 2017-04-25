@@ -23,6 +23,7 @@ call vundle#begin()
   Plugin 'kien/ctrlp.vim'
   Plugin 'pearofducks/ansible-vim'
   Plugin 'altercation/vim-colors-solarized'
+  Plugin 'airblade/vim-gitgutter'
   Plugin 'majutsushi/tagbar'
   " tabular always before vim-markdown
   Plugin 'godlygeek/tabular'
