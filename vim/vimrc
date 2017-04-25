@@ -23,6 +23,7 @@ call vundle#begin()
   Plugin 'kien/ctrlp.vim'
   Plugin 'pearofducks/ansible-vim'
   Plugin 'altercation/vim-colors-solarized'
+  Plugin 'majutsushi/tagbar'
   " tabular always before vim-markdown
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
@@ -31,11 +32,10 @@ call vundle#begin()
   Plugin 'elzr/vim-json'
   Plugin 'jiangmiao/auto-pairs'
   Plugin 'tpope/vim-surround'
-"  Plugin 'vim-scripts/ZoomWin'
   Plugin 'michaeljsmith/vim-indent-object'
   Plugin 'bkad/CamelCaseMotion'
   Plugin 'tomtom/tcomment_vim'
-"  Plugin 'majutsushi/tagbar' " for C and C++ development
+"  Plugin 'vim-scripts/ZoomWin'
   "  Plugin 'Valloric/YouetompleteMe'
   " Plugin 'fatih/vim-go'
 "  Plugin 'LaTeX-Box-Team/LaTeX-Box'
