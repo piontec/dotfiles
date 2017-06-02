@@ -4,3 +4,15 @@
     src: "boot/config.txt"
     dest: "/boot/config.txt"
     mode: 0777
+
+- name: install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    cache_valid_time: 7200
+  with_items:
+    - samba
+    - vim
+    - htop
+    - duplicity
+
