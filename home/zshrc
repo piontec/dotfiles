@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws common-aliases debian dirhistory docker docker-compose git git-flow git-hubflow httpie pass sudo systemd virtualenvwrapper)
+plugins=(aws common-aliases debian dirhistory docker docker-compose git git-flow git-hubflow httpie pass sudo systemd virtualenvwrapper terraform)
 
 # User configuration
 
@@ -86,6 +86,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias central-play=ansible-playbook\ --private-key\ ~/.ssh/work/central-docker-team.pem
 alias ca-play="sudo -H -u ops ansible-playbook -i inventories/central_aws -e ansible_user=ansible"
+tf=terraform
 unalias cp
 unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 

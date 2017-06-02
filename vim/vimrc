@@ -35,6 +35,7 @@ call vundle#begin()
   Plugin 'michaeljsmith/vim-indent-object'
   Plugin 'bkad/CamelCaseMotion'
   Plugin 'tomtom/tcomment_vim'
+  Plugin 'hashivim/vim-terraform.git'
 "  Plugin 'vim-scripts/ZoomWin'
   "  Plugin 'Valloric/YouetompleteMe'
   " Plugin 'fatih/vim-go'
@@ -122,6 +123,7 @@ set showcmd
 set showmatch
 set pastetoggle=<F10>
 set number
+set iskeyword-=_
 filetype plugin on
 set grepprg=grep\ -nH\ $*
 filetype indent on 
@@ -224,6 +226,8 @@ au BufRead /tmp/mutt-* set tw=78
 "let g:airline_theme = 'wombat'
 "let g:airline#extensions#tabline#buffer_nr_show = 0
 
+"terraform
+let g:terraform_align=1
 
 "Goyo
 let g:goyo_width=100
