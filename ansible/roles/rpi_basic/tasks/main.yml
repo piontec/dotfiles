@@ -1,0 +1,6 @@
+- name: copy config.txt file
+  become: True
+  template:
+    src: "boot/config.txt"
+    dest: "/boot/config.txt"
+    mode: 0777
