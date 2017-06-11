@@ -1,4 +1,4 @@
 - hosts: rpi
   roles: 
     - rpi_basic
-    - debops.samba
+      #    - debops.samba
