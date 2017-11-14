@@ -20,3 +20,5 @@
 
 [include]
     path = ./.gitconfig.user
+[status]
+	submoduleSummary = true

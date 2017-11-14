@@ -37,9 +37,15 @@ call vundle#begin()
   Plugin 'bkad/CamelCaseMotion'
   Plugin 'tomtom/tcomment_vim'
   Plugin 'hashivim/vim-terraform.git'
+  Plugin 'fatih/vim-go'
+  " Track the engine.
+  Plugin 'SirVer/ultisnips'
+  " Snippets are separated from the engine. Add this if you want them:
+  Plugin 'honza/vim-snippets'
+  " kube templates
+  Plugin 'andrewstuart/vim-kubernetes'
 "  Plugin 'vim-scripts/ZoomWin'
   "  Plugin 'Valloric/YouetompleteMe'
-  " Plugin 'fatih/vim-go'
 "  Plugin 'LaTeX-Box-Team/LaTeX-Box'
   " Plugin 'derekwyatt/vim-scala'
   "Plugin 'junegunn/goyo.vim'
@@ -97,6 +103,12 @@ endif
 
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <silent> <F8> :TagbarToggle<CR>
+
+" ulti-snips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " markdown
 let g:vim_markdown_folding_disabled = 1
