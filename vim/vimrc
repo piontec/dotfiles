@@ -20,7 +20,9 @@ call vundle#begin()
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/nerdcommenter'
   Plugin 'kien/ctrlp.vim'
+  Plugin 'mileszs/ack.vim'
   Plugin 'pearofducks/ansible-vim'
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'airblade/vim-gitgutter'
@@ -63,38 +65,6 @@ set norelativenumber
 map <silent> e <Plug>CamelCaseMotion_e 
 map <silent> ge <Plug>CamelCaseMotion_ge 
 
-if has("nvim") 
-  set backspace=2
-
-  let g:resu = ""
-  function JobHandler(job_id, data, event)
-    if a:event == 'stdout'
-       let str = self.shell.' out: '.join(a:data)
-       let g:resu = g:resu."\n".str
-    elseif a:event == 'stderr'
-      let str = self.shell.' err: '.join(a:data)
-      let g:resu = g:resu."\n".str
-    else
-      :cexpr g:resu
-      let g:resu = ""
-    endif
-  endfunction
-  let callbacks = {
-        \ 'on_stdout': function('JobHandler'),
-        \ 'on_stderr': function('JobHandler'),
-        \ 'on_exit': function('JobHandler')
-        \ }
-  " map <leader>lx <Esc>:call jobstart("xelatex.sh +3 +b +o +n \"main.tex\"", extend({'shell': 'xelatex'}, callbacks))<CR>
-  map <leader>lx <Esc>:call jobstart("rubber -s -f --pdf --module xelatex \"main\"", extend({'shell': 'rubber'}, callbacks))<CR>
-else 
-  map <leader>lb  <Esc>:!pdflatex.sh +3 +b +o "%:p"<CR>
-  map <leader>ll  <Esc>:!pdflatex.sh +3 +o "%:p"<CR>
-  map <leader>lck <Esc>:!pdflatex.sh -kk "%:p"<CR>
-  map <leader>lm <Esc>:!pdflatex.sh +3 +b +o "main.tex"<CR>
-  " map <leader>lx <Esc>:!xelatex.sh +3 +b +o "main.tex"<CR>
-  map <leader>lx <Esc>:!rubber -s -f --pdf --module xelatex "main.tex"<CR>
-endif
-
 syntax on
 " error in < 7.4
 if v:version > 704 
@@ -103,6 +73,14 @@ endif
 
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <silent> <F8> :TagbarToggle<CR>
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" ack-vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " ulti-snips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -168,8 +146,8 @@ colorscheme solarized
 cmap w!! %!sudo tee > /dev/null %
 "tab navigation
 "from Practical Vim book
-nnoremap <silent> <C-H> :bprev<CR> 
-nnoremap <silent> <C-L> :bnext<CR>
+"nnoremap <silent> <C-H> :bprev<CR> 
+"nnoremap <silent> <C-L> :bnext<CR>
 nnoremap <silent> [b :bprev<CR> 
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
@@ -207,11 +185,14 @@ endfunction
 map <silent><leader>cl :call ToggleCurline()<CR>
 
 imap jj <Esc>
-inoremap <C-Space> <C-n>
+" inoremap <C-Space> <C-n>
+inoremap <Tab> <C-n>
 inoremap <C-@> <C-Space>
-nnoremap <S-CR> O<Esc>
-nnoremap <CR> o<Esc>
-map <Esc>OM <S-CR>
+nmap <C-_> <leader>c<Space>
+nmap <C-f> :Ack<Space>
+"nnoremap <S-CR> O<Esc>
+"nnoremap <CR> o<Esc>
+"map <Esc>OM <S-CR>
 
 " Go
 au FileType go nmap <Leader>s <Plug>(go-implements)
