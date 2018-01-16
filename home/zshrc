@@ -54,8 +54,10 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(aws common-aliases debian dirhistory docker docker-compose git git-flow git-hubflow httpie kubectl pass sudo systemd virtualenvwrapper terraform)
 
 # User configuration
+export GOPATH=~/aurea/go
+export GOROOT=/usr/lib/go-1.9
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -92,3 +94,5 @@ unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
   tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
 list_containers() {docker -H $1 ps --format 'table{{.Names}}\t{{ .Label "com.trilogy.company"}}\t{{ .Label "com.trilogy.product"}}\t{{ .Label "com.trilogy.service"}}\t{{ .Label "com.trilogy.stage"}}\t{{ .Label "com.trilogy.team"}}\t{{ .Label "com.trilogy.maintainer.email"}}\t{{ .Label "com.trilogy.maintainer.skype"}}'}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
