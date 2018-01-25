@@ -90,7 +90,7 @@ alias central-play=ansible-playbook\ --private-key\ ~/.ssh/work/central-docker-t
 alias ca-play="sudo -H -u ops ansible-playbook -i inventories/central_aws -e ansible_user=ansible"
 alias tf=terraform
 alias kc=kubectl
-alias kcs=kubectl -n kube-system
+alias kcs="kubectl -n kube-system"
 unalias cp
 unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
