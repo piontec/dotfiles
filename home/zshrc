@@ -87,7 +87,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias central-play=ansible-playbook\ --private-key\ ~/.ssh/work/central-docker-team.pem
-alias ca-play="sudo -H -u ops ansible-playbook -i inventories/central_aws -e ansible_user=ansible"
+alias ca-play="sudo -H -u ops ansible-playbook -e ansible_user=ansible"
+alias ca-play-us="sudo -H -u ops ansible-playbook -i inventories/central_aws -e ansible_user=ansible"
+alias ca-play-eu="sudo -H -u ops ansible-playbook -i inventories/central_eu_aws -e ansible_user=ansible"
 alias tf=terraform
 alias kc=kubectl
 alias kcs="kubectl -n kube-system"
