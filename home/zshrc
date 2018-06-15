@@ -98,8 +98,10 @@ alias ca-play-test="ca-play -i inventories/test"
 alias tf=terraform
 alias kc=kubectl
 alias kcs="kubectl -n kube-system"
-alias kceu="KUBECONFIG=~/.kube/config-eu kubectl"
-alias kcseu="KUBECONFIG=~/.kube/config-eu kubectl -n kube-system"
+alias kce="KUBECONFIG=~/.kube/config-eu kubectl"
+alias kces="KUBECONFIG=~/.kube/config-eu kubectl -n kube-system"
+alias kct="KUBECONFIG=~/.kube/config-test kubectl"
+alias kcts="KUBECONFIG=~/.kube/config-test kubectl -n kube-system"
 unalias cp
 unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
