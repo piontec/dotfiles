@@ -46,6 +46,7 @@ call vundle#begin()
   Plugin 'honza/vim-snippets'
   " kube templates
   Plugin 'andrewstuart/vim-kubernetes'
+  Plugin 'dbeniamine/cheat.sh-vim'
 "  Plugin 'vim-scripts/ZoomWin'
   "  Plugin 'Valloric/YouetompleteMe'
 "  Plugin 'LaTeX-Box-Team/LaTeX-Box'
