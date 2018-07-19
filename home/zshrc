@@ -54,10 +54,10 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(aws common-aliases debian dirhistory docker docker-compose git git-flow git-hubflow httpie kubectl pass sudo systemd virtualenvwrapper terraform)
 
 # User configuration
-export GOPATH=~/aurea/go
+export GOPATH=~/devel/go
 export GOROOT=/usr/lib/go-1.10
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 export TF_PLUGIN_CACHE_DIR=/opt/terraform-plugin-dir
 
