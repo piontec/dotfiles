@@ -55,6 +55,7 @@ call vundle#begin()
 "  Plugin 'chriskempson/base16-vim'
 "  Plugin 'liuchengxu/vim-better-default'
 call vundle#end()
+let g:go_version_warning = 0
 
 runtime! plugin/default.vim
 set norelativenumber

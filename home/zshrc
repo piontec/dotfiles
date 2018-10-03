@@ -74,7 +74,7 @@ else
 fi
 
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" ]]; then
-  cd aurea-ms-central-docker-linux/; source ./set_pass_env.sh
+  cd central-kubernetes/; source ./set_pass_env.sh
 fi
 
 # Compilation flags
@@ -100,8 +100,8 @@ alias kc=kubectl
 alias kcs="kubectl -n kube-system"
 alias kce="KUBECONFIG=~/.kube/config-eu kubectl"
 alias kces="KUBECONFIG=~/.kube/config-eu kubectl -n kube-system"
-alias kct="KUBECONFIG=~/.kube/config-test kubectl"
-alias kcts="KUBECONFIG=~/.kube/config-test kubectl -n kube-system"
+alias eks="KUBECONFIG=~/.kube/eks-test kubectl"
+alias ekss="KUBECONFIG=~/.kube/eks-test kubectl -n kube-system"
 unalias cp
 unalias rm
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
