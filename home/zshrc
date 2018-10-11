@@ -73,6 +73,7 @@ else
   export EDITOR='vim'
 fi
 
+# work aliases
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" || $HOST == "cow" ]]; then
   cd central-kubernetes/; source ./set_team_env.sh; cd ~
 fi
@@ -80,6 +81,13 @@ fi
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" ]]; then
   cd central-kubernetes/; source ./set_pass_env.sh
 fi
+
+for i in `~/.kube/*.config`; do
+  filename="${i##*/}"
+  prefix="${filename%.*}"
+  alias k${prefix}="KUBECONFIG=$i kubectl"
+  alias ks${prefix}="KUBECONFIG=$i kubectl -n kube-system"
+done
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
