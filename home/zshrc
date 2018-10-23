@@ -75,11 +75,11 @@ fi
 
 # work aliases
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" || $HOST == "cow" ]]; then
-  cd central-kubernetes/; source ./set_team_env.sh; cd ~
+  cd ~/central-kubernetes/; source ./set_team_env.sh; cd ~
 fi
 
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" ]]; then
-  cd central-kubernetes/; source ./set_pass_env.sh
+  cd ~/central-kubernetes/; source ./set_pass_env.sh
 fi
 
 for i in `ls ~/.kube/*.config`; do
