@@ -82,11 +82,11 @@ if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" ]]; then
   cd central-kubernetes/; source ./set_pass_env.sh
 fi
 
-for i in `~/.kube/*.config`; do
+for i in `ls ~/.kube/*.config`; do
   filename="${i##*/}"
   prefix="${filename%.*}"
-  alias k${prefix}="KUBECONFIG=$i kubectl"
-  alias ks${prefix}="KUBECONFIG=$i kubectl -n kube-system"
+  alias k${prefix}="KUBECONFIG=$i kubectl-1.8"
+  alias ks${prefix}="KUBECONFIG=$i kubectl-1.8 -n kube-system"
 done
 
 # Compilation flags
