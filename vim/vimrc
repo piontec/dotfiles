@@ -30,7 +30,8 @@ call vundle#begin()
   " tabular always before vim-markdown
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
-  Plugin 'Shougo/neocomplete.vim' 
+  "  Plugin 'Shougo/neocomplete.vim' 
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'm-kat/aws-vim'
   Plugin 'elzr/vim-json'
   Plugin 'jiangmiao/auto-pairs'
@@ -60,12 +61,20 @@ let g:go_version_warning = 0
 runtime! plugin/default.vim
 set norelativenumber
 
+" python file handling
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
+
 " map camel case movement
 "let g:vim_json_syntax_conceal = 0
 "map <silent> w <Plug>CamelCaseMotion_w 
 "map <silent> b <Plug>CamelCaseMotion_b 
 map <silent> e <Plug>CamelCaseMotion_e 
 map <silent> ge <Plug>CamelCaseMotion_ge 
+
+" YCM
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 syntax on
 " error in < 7.4
@@ -298,3 +307,13 @@ imap <expr> <f28> XTermPasteBegin("")
 vmap <expr> <f28> XTermPasteBegin("c")
 cmap <f28> <nop>
 cmap <f29> <nop>
+
+" virt env
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
