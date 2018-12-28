@@ -75,19 +75,13 @@ fi
 
 # work aliases
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" || $HOST == "cow" ]]; then
+  KUBE_HELPER_SETUP_PRIVATE=1
   cd ~/central-kubernetes/; source ./set_team_env.sh; cd ~
 fi
 
 if [[ $HOST == "central-ansible" || $HOST == "central-ansible-test" ]]; then
   cd ~/central-kubernetes/; source ./set_pass_env.sh
 fi
-
-for i in `ls ~/.kube/*.config`; do
-  filename="${i##*/}"
-  prefix="${filename%.*}"
-  alias k${prefix}="KUBECONFIG=$i kubectl-1.8"
-  alias ks${prefix}="KUBECONFIG=$i kubectl-1.8 -n kube-system"
-done
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,8 +100,6 @@ done
 alias tf=terraform
 unalias cp
 unalias rm
-transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
-  tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
 list_containers() {docker -H $1 ps --format 'table{{.Names}}\t{{ .Label "com.trilogy.company"}}\t{{ .Label "com.trilogy.product"}}\t{{ .Label "com.trilogy.service"}}\t{{ .Label "com.trilogy.stage"}}\t{{ .Label "com.trilogy.team"}}\t{{ .Label "com.trilogy.maintainer.email"}}\t{{ .Label "com.trilogy.maintainer.skype"}}'}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
