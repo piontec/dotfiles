@@ -55,7 +55,7 @@ plugins=(aws common-aliases debian dirhistory docker docker-compose git git-flow
 
 # User configuration
 export GOPATH=~/devel/go
-export GOROOT=/usr/lib/go-1.10
+export GOROOT=/usr/lib/go-1.12
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
