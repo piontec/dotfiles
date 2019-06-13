@@ -97,7 +97,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tf=terraform
+alias tf=terraform-0.12
+alias tf12=terraform-0.12
+alias tf11=terraform
 unalias cp
 unalias rm
 list_containers() {docker -H $1 ps --format 'table{{.Names}}\t{{ .Label "com.trilogy.company"}}\t{{ .Label "com.trilogy.product"}}\t{{ .Label "com.trilogy.service"}}\t{{ .Label "com.trilogy.stage"}}\t{{ .Label "com.trilogy.team"}}\t{{ .Label "com.trilogy.maintainer.email"}}\t{{ .Label "com.trilogy.maintainer.skype"}}'}
