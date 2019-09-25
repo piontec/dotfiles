@@ -21,4 +21,7 @@
 [include]
     path = ./.gitconfig.user
 [status]
-	submoduleSummary = true
+  submoduleSummary = true
+
+[url "ssh://git@github.com/piontec/"]
+	insteadOf = https://github.com/piontec/
