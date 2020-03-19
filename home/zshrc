@@ -121,9 +121,11 @@ alias tf11=terraform
 alias k=kubectl
 alias kctx=kubectx
 alias ks="kubectl -n kube-system"
-alias kgs="kubectl -n giantswarm"
+alias kg="kubectl -n giantswarm"
+alias km="kubectl -n monitoring"
 alias open=xdg-open
-alias opsctl='OPSCTL_GPG_PASSWORD=`pass giantswarm/opsctl/gpg_private_key` OPSCTL_GITHUB_TOKEN=`pass giantswarm/opsctl/github_private_token` opsctl'
+#alias opsctl='OPSCTL_GPG_PASSWORD=`pass giantswarm/opsctl/gpg_private_key` OPSCTL_GITHUB_TOKEN=`pass giantswarm/opsctl/github_private_token` opsctl'
+alias opsctl='OPSCTL_GPG_PASSWORD=`lpass show --password "Shared-Dev Common/opsctl GPG password"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` opsctl'
 unalias cp
 unalias rm
 
