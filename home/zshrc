@@ -67,9 +67,9 @@ plugins=(
   pass
   pip
   pipenv
+  poetry
   sudo 
   systemd
-  virtualenvwrapper
   terraform
   tmux
 )
@@ -78,7 +78,7 @@ plugins=(
 export GOPATH=~/devel/go
 export GOROOT=/usr/lib/go
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin:/snap/bin"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 export TF_PLUGIN_CACHE_DIR=/opt/terraform-plugin-dir
 
@@ -99,8 +99,20 @@ KUBE_PS1_NS_ENABLE=false
 KUBE_PS1_SYMBOL_USE_IMG=true
 KUBE_PS1_DIVIDER=''
 
+# pyenv setup
+export PYENV_ROOT=$HOME/tools/pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+#poetry
+export PATH="$HOME/.poetry/bin:$PATH"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+#krew
+export PATH="$PATH:${HOME}/.krew/bin"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -114,7 +126,7 @@ KUBE_PS1_DIVIDER=''
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias slackutil="docker run --rm -ti -e SLACK_TOKEN=${SLACK_TOKEN} quay.io/giantswarm/slackutil"
-alias cat="bat -p"
+alias cat="batcat -p"
 alias tf=terraform-0.12
 alias tf12=terraform-0.12
 alias tf11=terraform
@@ -124,8 +136,8 @@ alias ks="kubectl -n kube-system"
 alias kg="kubectl -n giantswarm"
 alias km="kubectl -n monitoring"
 alias open=xdg-open
-#alias opsctl='OPSCTL_GPG_PASSWORD=`pass giantswarm/opsctl/gpg_private_key` OPSCTL_GITHUB_TOKEN=`pass giantswarm/opsctl/github_private_token` opsctl'
-alias opsctl='OPSCTL_GPG_PASSWORD=`lpass show --password "Shared-Dev Common/opsctl GPG password"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` opsctl'
+alias git-list-non-remote="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}'"
+alias opsctl='OPSCTL_GPG_PASSWORD=`lpass show --password "Shared-Dev Common/opsctl GPG password"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin $HOME/bin/opsctl'
 unalias cp
 unalias rm
 
