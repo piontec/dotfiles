@@ -1,0 +1,22 @@
+add_newline = false
+
+[directory]
+truncation_length = 4
+truncation_symbol = "…/"
+style = 'green'
+
+[aws]
+disabled = true
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[kubernetes]
+disabled = false
+
+[line_break]
+disabled = true
+
+[python]
+pyenv_version_name = true

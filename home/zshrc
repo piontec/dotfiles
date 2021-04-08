@@ -132,16 +132,19 @@ alias tf=terraform-0.12
 alias tf12=terraform-0.12
 alias tf11=terraform
 alias k=kubectl
-alias kctx=kubectx
+alias kctx="kubectl ctx"
 alias ks="kubectl -n kube-system"
 alias kg="kubectl -n giantswarm"
 alias km="kubectl -n monitoring"
+alias kn="kubectl neat"
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin $HOME/bin/opsctl'
 alias gg="git graph"
-alias gcrb="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D"
+alias gcrb="git branch -r | awk \"{print \\\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\\$1}\" | xargs git branch -D"
 unalias cp
 unalias rm
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"
