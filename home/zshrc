@@ -59,6 +59,7 @@ plugins=(
   copyfile
   dircycle
   docker
+  fzf-tab
   git
   gitfast
   httpie
@@ -66,7 +67,6 @@ plugins=(
   kubectl 
   pass
   pip
-  pipenv
   poetry
   sudo 
   systemd
@@ -102,9 +102,8 @@ KUBE_PS1_DIVIDER=''
 # pyenv setup
 export PYENV_ROOT=$HOME/tools/pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 #poetry
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -139,6 +138,8 @@ alias km="kubectl -n monitoring"
 alias kn="kubectl neat"
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin $HOME/bin/opsctl'
+alias dopsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/gs/.kube/ -v ~/.config/gsctl:/home/gs/.config/gsctl -v ~/.config/opsctl:/home/gs/.config/opsctl -e OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` -e OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` -e OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` gs_utils:latest opsctl'
+alias dgsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/gs/.kube/ -v ~/.config/gsctl:/home/gs/.config/gsctl -v ~/.config/opsctl:/home/gs/.config/opsctl gs_utils:latest gsctl'
 alias gg="git graph"
 alias gcrb="git branch -r | awk \"{print \\\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\\$1}\" | xargs git branch -D"
 unalias cp

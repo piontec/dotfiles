@@ -24,6 +24,24 @@
   submoduleSummary = true
 
 [url "ssh://git@github.com/piontec/"]
-	insteadOf = https://github.com/piontec/
+  insteadOf = https://github.com/piontec/
+
 [pull]
-	rebase = true
+  rebase = true
+
+[diff]
+  colorMoved = default
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+  line-numbers = true
+  syntax-theme = Dracula
+  navigate = true
+
+[interactive]
+    diffFilter = delta --color-only
