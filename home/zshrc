@@ -106,7 +106,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 #poetry
-export PATH="$HOME/.poetry/bin:$PATH"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -138,12 +137,24 @@ alias km="kubectl -n monitoring"
 alias kn="kubectl neat"
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin $HOME/bin/opsctl'
-alias dopsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/gs/.kube/ -v ~/.config/gsctl:/home/gs/.config/gsctl -v ~/.config/opsctl:/home/gs/.config/opsctl -e OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` -e OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` -e OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` gs_utils:latest opsctl'
-alias dgsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/gs/.kube/ -v ~/.config/gsctl:/home/gs/.config/gsctl -v ~/.config/opsctl:/home/gs/.config/opsctl gs_utils:latest gsctl'
+alias dopsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/piontec/.kube/ -v ~/.config/:/home/piontec/.config/ -e OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` -e OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` -e OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` gs_utils:latest opsctl'
+alias dgsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/piontec/.kube/ -v ~/.config/:/home/piontec/.config/ gs_utils:latest gsctl'
 alias gg="git graph"
 alias gcrb="git branch -r | awk \"{print \\\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\\$1}\" | xargs git branch -D"
 unalias cp
 unalias rm
+
+# exa
+alias ls='exa'                                                          # ls
+alias l='exa -lbF'                                                # list, size, type, git
+alias ll='exa -lbGF'                                             # long list
+alias llm='exa -lbGd  --sort=modified'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
+alias lS='exa -1'                                                              # one column, just names
+alias lt='exa --tree --level=2'                                         # tree
+
+
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
