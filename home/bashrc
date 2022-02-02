@@ -136,3 +136,4 @@ unset __conda_setup
 source "$HOME/.cargo/env"
 
 [[ -s "/home/piontec/.gvm/scripts/gvm" ]] && source "/home/piontec/.gvm/scripts/gvm"
+. "$HOME/.cargo/env"
