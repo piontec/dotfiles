@@ -153,8 +153,8 @@ unalias rm
 # exa
 alias ls='exa'                                                          # ls
 alias l='exa -lbF'                                                # list, size, type, git
-alias ll='exa -lbGF'                                             # long list
-alias llm='exa -lbGd  --sort=modified'                            # long list, modified date sort
+alias ll='exa -lbF'                                             # long list
+alias llm='exa -lbd  --sort=modified'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
 alias lS='exa -1'                                                              # one column, just names
