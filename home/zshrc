@@ -83,7 +83,7 @@ export GOROOT=/usr/lib/go
 
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export TF_PLUGIN_CACHE_DIR=/opt/terraform-plugin-dir
+export TF_PLUGIN_CACHE_DIR=$HOME/tools/terraform-plugin-dir
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,9 +132,7 @@ export PATH="$PATH:${HOME}/.krew/bin"
 alias watch="watch "
 alias slackutil="docker run --rm -ti -e SLACK_TOKEN=${SLACK_TOKEN} quay.io/giantswarm/slackutil"
 alias cat="batcat -p"
-alias tf=terraform-0.12
-alias tf12=terraform-0.12
-alias tf11=terraform
+alias tf=terraform
 alias k=kubectl
 alias kctx="kubectl ctx"
 alias ks="kubectl -n kube-system"
@@ -186,3 +184,4 @@ export CHEAT_USE_FZF=true
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
 
 eval "$(starship init zsh)"
+eval "$(/home/piontec/.linuxbrew/bin/brew shellenv)"
