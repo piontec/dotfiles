@@ -81,7 +81,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export GOPATH=~/devel/go
 export GOROOT=/usr/lib/go
 
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin:/snap/bin"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/bin/:$GOROOT/bin:$GOPATH/bin:/snap/bin:$HOME/tools/pyenv/libexec"
 # export MANPATH="/usr/local/man:$MANPATH"
 export TF_PLUGIN_CACHE_DIR=$HOME/tools/terraform-plugin-dir
 

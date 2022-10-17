@@ -11,6 +11,7 @@
 	st = status
 	unstage = reset HEAD --
   pl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" 
+  dft = difftool
 
 [push]
 	default = simple
@@ -31,12 +32,14 @@
 
 [diff]
   colorMoved = default
+  tool = difftastic
 
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+  difftool = true
 
 [delta]
   line-numbers = true
@@ -45,6 +48,12 @@
 
 [interactive]
   diffFilter = delta --color-only
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
  
 [init]
 	defaultBranch = main
