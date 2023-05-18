@@ -85,6 +85,10 @@ export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin
 # export MANPATH="/usr/local/man:$MANPATH"
 export TF_PLUGIN_CACHE_DIR=$HOME/tools/terraform-plugin-dir
 
+# linuxbrew
+eval "$(/home/piontec/.linuxbrew/bin/brew shellenv)"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -158,25 +162,6 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extende
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
-# gs
- #: which kubeconfig 
-kubeconfig ()
-{ 
-    if (( $# == 1 )); then
-        kubectl gs login "$1";
-    else
-        if (( $# == 2 )); then
-            kubectl gs login "$1" --certificate-group "system:masters" --certificate-ttl 24h --workload-cluster "$2";
-        else
-            if (( $# == 3 )); then
-                kubectl gs login "$1" --certificate-group "system:masters" --certificate-ttl 24h --workload-cluster "$2" --organization "$3";
-            else
-                echo "Illegal number of parameters (installation [workload-cluster [organization]])" 1>&2;
-            fi;
-        fi;
-    fi
-}
-
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -184,4 +169,7 @@ export CHEAT_USE_FZF=true
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
 
 eval "$(starship init zsh)"
-eval "$(/home/piontec/.linuxbrew/bin/brew shellenv)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
