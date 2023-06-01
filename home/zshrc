@@ -96,9 +96,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 PROMPT=$PROMPT'$(kube_ps1) '
@@ -142,7 +142,9 @@ alias kctx="kubectl ctx"
 alias ks="kubectl -n kube-system"
 alias kg="kubectl -n giantswarm"
 alias km="kubectl -n monitoring"
+alias kf="kubectl -n flux-system"
 alias kn="kubectl neat"
+alias vim=nvim
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin $HOME/bin/opsctl'
 alias dopsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/piontec/.kube/ -v ~/.config/:/home/piontec/.config/ -e OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` -e OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` -e OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` gs_utils:latest opsctl'

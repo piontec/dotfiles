@@ -6,6 +6,8 @@ return {
       ---@type lspconfig.options
       servers = {
         bashls = {},
+        dagger = {},
+        dockerls = {},
         gopls = {},
         marksman = {},
         pyright = {},
