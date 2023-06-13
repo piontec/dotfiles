@@ -1,0 +1,15 @@
+#!/bin/dash
+
+if [ $# -lt 1 ]; then
+	echo "Usage: $0 cmd [arg list]"
+	exit 1
+fi
+
+CUR=$(pwd)
+cd "$HOME"/tools/python-based-tools/ || exit 2
+CMD=$1
+shift
+pipenv run "$CMD" "$@"
+RES="$?"
+cd "${CUR}" || true
+exit $RES
