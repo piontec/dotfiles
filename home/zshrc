@@ -176,5 +176,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-um() {~/bin/pipenv-python-tools um}
-oci() {~/bin/pipenv-python-tools oci}
+for cmd in $(cat ~/tools/python-based-tools/bin-list); do
+  $cmd() {~/bin/pipenv-python-tools $0 "$@"}
+done
