@@ -20,8 +20,8 @@
 [status]
   submoduleSummary = true
 
-[url "ssh://git@github.com/piontec/"]
-  insteadOf = https://github.com/piontec/
+#[url "ssh://git@github.com/piontec/"]
+#  insteadOf = https://github.com/piontec/
 
 [pull]
   rebase = true

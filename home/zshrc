@@ -143,6 +143,7 @@ alias ks="kubectl -n kube-system"
 alias kg="kubectl -n giantswarm"
 alias km="kubectl -n monitoring"
 alias kf="kubectl -n flux-system"
+alias kfg="kubectl -n flux-giantswarm"
 alias kn="kubectl neat"
 alias vim=nvim
 alias open=xdg-open
@@ -179,3 +180,5 @@ export NVM_DIR="$HOME/.nvm"
 for cmd in $(cat ~/tools/python-based-tools/bin-list); do
   $cmd() {~/bin/pipenv-python-tools $0 "$@"}
 done
+
+[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
