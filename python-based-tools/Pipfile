@@ -4,9 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-oci-cli = "*"
-promptops = "*"
-esptool = "*"
 
 [dev-packages]
 
