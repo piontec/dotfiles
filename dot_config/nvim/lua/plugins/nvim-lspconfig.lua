@@ -13,6 +13,13 @@ return {
         pyright = {},
         tflint = {},
         terraformls = {},
+        helm_ls = {
+          yamlls = {
+            settings = {
+              path = "yaml-language-server",
+            },
+          },
+        },
       },
     },
   },

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-ssh coffee sudo /etc/init.d/pulseaudio restart
-pacmd load-module module-tunnel-sink server=192.168.3.1
