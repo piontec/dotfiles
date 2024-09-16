@@ -45,6 +45,21 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
 
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTORY_IGNORE="(ls|pwd|exit)*"
+setopt EXTENDED_HISTORY      # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY    # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY         # Share history between all sessions.
+setopt HIST_IGNORE_DUPS      # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS  # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS     # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY           # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY        # append to history file (Default)
+setopt HIST_NO_STORE         # Don't store history commands
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -60,6 +75,7 @@ plugins=(
   dircycle
   docker
   fzf-tab
+  fzf
   git
   gitfast
   httpie
@@ -136,15 +152,18 @@ export PATH="$PATH:${HOME}/.krew/bin"
 alias watch="watch "
 alias slackutil="docker run --rm -ti -e SLACK_TOKEN=${SLACK_TOKEN} quay.io/giantswarm/slackutil"
 alias cat="batcat -p"
-alias tf=terraform
-alias k=kubectl
-alias kctx="kubectl ctx"
-alias ks="kubectl -n kube-system"
-alias kg="kubectl -n giantswarm"
-alias km="kubectl -n monitoring"
-alias kf="kubectl -n flux-system"
-alias kfg="kubectl -n flux-giantswarm"
-alias kn="kubectl neat"
+alias tf=tofu
+source <(kubectl completion zsh)
+alias k=kubecolor
+alias kctx="kubecolor ctx"
+alias ks="kubecolor -n kube-system"
+alias kg="kubecolor -n giantswarm"
+alias km="kubecolor -n monitoring"
+alias kf="kubecolor -n flux-system"
+alias kfg="kubecolor -n flux-giantswarm"
+alias kn="kubecolor neat"
+# make completion work with kubecolor
+compdef kubecolor=kubectl
 alias vim=nvim
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin $HOME/bin/opsctl'
@@ -166,10 +185,10 @@ alias lS='exa -1'                                                              #
 alias lt='exa --tree --level=2'                                         # tree
 
 # fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export CHEAT_USE_FZF=true
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export CHEAT_USE_FZF=true
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
 
 eval "$(starship init zsh)"
 
@@ -182,3 +201,7 @@ export NVM_DIR="$HOME/.nvm"
 # done
 
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh --disable-up-arrow)"
