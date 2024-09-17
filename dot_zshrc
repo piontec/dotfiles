@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh installation.
+"#" Path to your oh-my-zsh installation.
 export ZSH=/home/piontec/.oh-my-zsh
 
 export WORKON_HOME=$HOME/.virtualenvs
@@ -185,10 +185,10 @@ alias lS='exa -1'                                                              #
 alias lt='exa --tree --level=2'                                         # tree
 
 # fzf
-# source /usr/share/doc/fzf/examples/key-bindings.zsh
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export CHEAT_USE_FZF=true
-# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export CHEAT_USE_FZF=true
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666,underline"
 
 eval "$(starship init zsh)"
 
@@ -202,6 +202,9 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh --disable-up-arrow)"
+# atuin
+# . "$HOME/.atuin/bin/env"
+# eval "$(atuin init zsh --disable-up-arrow)"
+#
+# zsh copilot
+# source ~/.zsh-copilot/zsh-copilot.plugin.zsh
