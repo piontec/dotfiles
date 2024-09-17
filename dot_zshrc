@@ -207,4 +207,5 @@ export NVM_DIR="$HOME/.nvm"
 # eval "$(atuin init zsh --disable-up-arrow)"
 
 # zsh copilot
+source ~/.openai_api_key
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
