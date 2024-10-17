@@ -1,0 +1,24 @@
+[global_config]
+[keybindings]
+  resize_left = <Primary><Shift>l
+  resize_right = <Primary><Shift>r
+  move_tab_right = <Primary><Shift>Right
+  move_tab_left = <Primary><Shift>Left
+  next_tab = <Shift>Right
+  prev_tab = <Shift>Left
+  reset = <Primary>r
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    font = FiraCode Nerd Font Mono weight=450 12
+    foreground_color = "#ffffff"
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
