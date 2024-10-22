@@ -1,0 +1,45 @@
+Host master
+  HostName 185.58.225.131
+  ForwardAgent yes
+
+Host node-01
+  HostName 185.58.225.33
+  ForwardAgent yes
+
+Host dcs-lp
+  User piontec
+  ProxyCommand ssh lpiatkowski@sindbad.cs.put.poznan.pl -W %h:%p -q
+
+Host polluks.cs.put.poznan.pl
+	User lpiatkowski
+
+Host libra.cs.put.poznan.pl
+  User lpiatkowski
+
+Host coffee
+  User root
+
+Host espresso
+  User root
+
+Host pve
+	User root
+
+Host octopi
+  User pi
+
+Host host.bastion.eu-frankfurt-1.oci.oraclecloud.com
+  HostkeyAlgorithms +ssh-rsa
+  PubkeyAcceptedAlgorithms +ssh-rsa
+
+Host instance-console.eu-frankfurt-1.oci.oraclecloud.com
+  HostkeyAlgorithms +ssh-rsa
+  PubkeyAcceptedAlgorithms +ssh-rsa
+
+#Host vpn.giantswarm.io
+#  User lukasz
+
+#Host ca
+#  ForwardAgent yes
+#  RemoteForward /home/piontec/.gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+
