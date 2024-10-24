@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.linux.brew -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+{{ end -}}
+
+sudo apt install -y {{ .packages.linux.apt | join " " }}

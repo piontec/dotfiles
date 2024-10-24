@@ -1,0 +1,17 @@
+packages:
+  linux:
+    apt:
+      - "fzf"
+      - "eza"
+      - "autojump"
+      - "zsh"
+      - "terminator"
+      - "rsync"
+    brew:
+      - "starship"
+      - "git-delta"
+      - "kubecolor"
+      - "k9s"
+      - "lazygit"
+      - "neovim"
+      - "yq"
