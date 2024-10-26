@@ -1,0 +1,12 @@
+sourceDir = "/home/piontec/devel/piontec-github/dotfiles"
+encryption = "gpg"
+
+[gpg]
+    recipient = "piontec@gmail.com"
+
+[git]
+    autoCommit = true
+    autoPush = true
+
+[hooks.read-source-state.pre]
+    command = "devel/piontec-github/dotfiles/chezmoi/.install-password-manager.sh"

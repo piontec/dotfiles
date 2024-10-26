@@ -5,8 +5,14 @@ return {
     {
       "w",
       "<cmd>lua require('spider').motion('w')<CR>",
-      mode = { "n", "o", "x" },
+      mode = { "o", "x" },
       desc = "Move to start of next of word",
+    },
+    {
+      "cw",
+      "<cmd>lua require('spider').motion('e')<CR>",
+      mode = { "n" },
+      desc = "Change to end of word",
     },
     {
       "e",
