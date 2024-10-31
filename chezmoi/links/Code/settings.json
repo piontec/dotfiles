@@ -169,7 +169,7 @@
     "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "go.coverOnSingleTest": true,
     "python.testing.cwd": "",
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "markdown.extension.print.absoluteImgPath": false,
     "markdown.extension.toc.omittedFromToc": {
         "README.md": [
