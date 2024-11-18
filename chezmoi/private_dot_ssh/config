@@ -1,11 +1,3 @@
-Host master
-  HostName 185.58.225.131
-  ForwardAgent yes
-
-Host node-01
-  HostName 185.58.225.33
-  ForwardAgent yes
-
 Host dcs-lp
   User piontec
   ProxyCommand ssh lpiatkowski@sindbad.cs.put.poznan.pl -W %h:%p -q
@@ -26,6 +18,9 @@ Host pve
 	User root
 
 Host octopi
+  User pi
+
+Host ender
   User pi
 
 Host host.bastion.eu-frankfurt-1.oci.oraclecloud.com
