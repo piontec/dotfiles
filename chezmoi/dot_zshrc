@@ -204,5 +204,7 @@ export NVM_DIR="$HOME/.nvm"
 # . "$HOME/.atuin/bin/env"
 
 # eval "$(atuin init zsh --disable-up-arrow)"
+#
+. $(pack completion --shell zsh)
 source ~/.openai_api_key
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
