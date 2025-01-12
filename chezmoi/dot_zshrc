@@ -154,7 +154,7 @@ alias cat="batcat -p"
 alias tf=tofu
 source <(kubectl completion zsh)
 alias k=kubecolor
-alias kctx="kubecolor ctx"
+alias kctx="kubectx"
 alias ks="kubecolor -n kube-system"
 alias kg="kubecolor -n giantswarm"
 alias km="kubecolor -n monitoring"
@@ -208,3 +208,17 @@ export NVM_DIR="$HOME/.nvm"
 . $(pack completion --shell zsh)
 source ~/.openai_api_key
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
+
+function precmd {
+  hpwd=$history[$((HISTCMD-1))]
+  if [[ $hpwd == " "* ]]; then
+    return
+  fi
+  if [[ $hpwd == "cd" ]]; then  
+    cwd=$OLDPWD
+  else
+    cwd=$PWD
+  fi
+  hpwd="${hpwd% ### *} ### $cwd"
+  echo "$hpwd" >>~/.zsh-history-logs/zsh-history-$(date "+%Y-%m-%d").log
+}

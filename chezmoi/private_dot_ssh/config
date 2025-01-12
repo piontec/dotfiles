@@ -15,10 +15,19 @@ Host espresso
   User root
 
 Host pve
-	User root
+  User root
 
-Host octopi
-  User pi
+Host storage
+  User root
+
+Host docker
+  User root
+
+Host immich
+  User root
+
+Host co
+  User root
 
 Host ender
   User pi

@@ -32,13 +32,13 @@
     divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-params, sidetone, equalizer, adc_power_management]
   _battery: 4096
   _modelId: B01940690000
-  _sensitive: {change-host: true, dpi: true, gesture2-divert: true, gesture2-gestures: true, hires-scroll-mode: true, hires-smooth-invert: false, hires-smooth-resolution: true,
-    scroll-ratchet: true, smart-shift: false}
+  _sensitive: {change-host: true, divert-keys: true, dpi: true, gesture2-divert: true, gesture2-gestures: true, hires-scroll-mode: true, hires-smooth-invert: false,
+    hires-smooth-resolution: true, reprogrammable-keys: true, scroll-ratchet: true, smart-shift: false}
   _serial: FC0160F5
   _unitId: B063C4D2
   _wpid: '4069'
   change-host: null
-  divert-keys: {82: 0, 83: 0, 86: 0, 195: 0, 196: 0}
+  divert-keys: {82: 0, 83: 0, 86: 0, 195: 2, 196: 0}
   dpi: 1000
   gesture2-divert: {46: false}
   gesture2-gestures: {45: true, 46: true}

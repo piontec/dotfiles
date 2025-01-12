@@ -38,6 +38,7 @@
         "ctrlr",
         "debugf",
         "deps",
+        "Deque",
         "devenv",
         "distro",
         "dnat",
@@ -222,4 +223,28 @@
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!",
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.chat.inlineChatCompletionTrigger.enabled": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+    },
+    "vscode-neovim.highlightGroups.highlights": {
+        
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground"
+        },
+        "CurSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground"
+        },
+        "Substitute": {
+            "backgroundColor": "theme.editor.foreground",
+            "color": "theme.editor.background"
+        }
+    },
 }
