@@ -9,6 +9,7 @@ return {
         dagger = {},
         dockerls = {},
         gopls = {},
+        kcl = {},
         marksman = {},
         pyright = {},
         tflint = {},
