@@ -77,11 +77,9 @@ plugins=(
   fzf-tab
   fzf
   git
-  gitfast
   httpie
   kube-ps1
   kubectl 
-  pass
   pip
   poetry
   sudo 
@@ -165,9 +163,7 @@ alias kn="kubecolor neat"
 compdef kubecolor=kubectl
 alias vim=nvim
 alias open=xdg-open
-alias opsctl='OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin $HOME/bin/opsctl'
-alias dopsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/piontec/.kube/ -v ~/.config/:/home/piontec/.config/ -e OPSCTL_OPSGENIE_TOKEN=`lpass show --notes dev/OPSCTL_OPSGENIE_TOKEN` -e OPSCTL_GPG_PASSWORD=`lpass show --notes "Shared-Dev Common/opsctl GPG password" | cut -f2 -d"=" | tr -d \"` -e OPSCTL_GITHUB_TOKEN=`lpass show --password dev/github_private_token` gs_utils:latest opsctl'
-alias dgsctl='docker run --network host --dns 10.0.253.1 -v ~/.kube/:/home/piontec/.kube/ -v ~/.config/:/home/piontec/.config/ gs_utils:latest gsctl'
+alias opsctl='OPSCTL_OPSGENIE_TOKEN=`op item get OPSCTL_OPSGENIE_TOKEN --vault Employee --fields notesPlain` OPSCTL_GITHUB_TOKEN=`op item get github_private_token --vault Employee --fields password --reveal` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin $HOME/bin/opsctl'
 alias gg="git graph"
 alias gcrb="git branch -r | awk \"{print \\\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\\$1}\" | xargs git branch -D"
 unalias cp
@@ -199,7 +195,7 @@ export NVM_DIR="$HOME/.nvm"
 #   $cmd() {~/bin/pipenv-python-tools $0 "$@"}
 # done
 
-[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
+# [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
 
 # . "$HOME/.atuin/bin/env"
 
@@ -222,3 +218,11 @@ function precmd {
   hpwd="${hpwd% ### *} ### $cwd"
   echo "$hpwd" >>~/.zsh-history-logs/zsh-history-$(date "+%Y-%m-%d").log
 }
+SUPPRESS_LABEL_WARNING=True
+
+# bun completions
+[ -s "/home/piontec/.oh-my-zsh/completions/_bun" ] && source "/home/piontec/.oh-my-zsh/completions/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
