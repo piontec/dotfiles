@@ -1,15 +1,9 @@
-- 1.1.13+dfsg-1
+- 1.1.14-2
 - _NAME: Marathon Mouse M705 (M-R0009)
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 0D0E2D27
   _wpid: 101B
 - _NAME: MX Vertical Wireless Mouse
-  _absent: [hi-res-scroll, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert, thumb-scroll-mode,
-    onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi_extended, speed-change, backlight, backlight_level, backlight_duration_hands_out,
-    backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_, brightness_control, per-key-lighting,
-    fn-swap, disable-keyboard-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert,
-    gesture2-params, sidetone, equalizer, adc_power_management]
-  _battery: 4096
   _modelId: B020407BC08A
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 97F304DA
