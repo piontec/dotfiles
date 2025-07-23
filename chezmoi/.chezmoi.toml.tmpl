@@ -1,8 +1,13 @@
 sourceDir = "/home/piontec/devel/piontec-github/dotfiles"
+encryption = "age"
 
 [git]
     autoCommit = true
     autoPush = true
 
-[hooks.read-source-state.pre]
-    command = "devel/piontec-github/dotfiles/chezmoi/.install-password-manager.sh"
+# [hooks.read-source-state.pre]
+#     command = "devel/piontec-github/dotfiles/chezmoi/.install-password-manager.sh"
+
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age1yjgajhmf8x7p6s9ftsat3kxra5njv335lyzl28xuskl0nmy4gstsh2agq8"
