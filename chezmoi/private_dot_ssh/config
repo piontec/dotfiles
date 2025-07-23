@@ -46,4 +46,3 @@ Host instance-console.eu-frankfurt-1.oci.oraclecloud.com
 #Host ca
 #  ForwardAgent yes
 #  RemoteForward /home/piontec/.gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
-
