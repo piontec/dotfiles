@@ -170,12 +170,12 @@ unalias cp
 unalias rm
 
 # exa
-alias ls='exa'                                                          # ls
-alias l='exa -lbF'                                                # list, size, type, git
-alias ll='exa -lbF'                                             # long list
-alias llm='exa -lbd  --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
+alias ls='exa --hyperlink'                                                          # ls
+alias l='exa -lbF --hyperlink'                                                # list, size, type, git
+alias ll='exa -lbF --hyperlink'                                             # long list
+alias llm='exa -lbd  --sort=modified --hyperlink'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale --hyperlink'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale --hyperlink' # all + extended list
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
@@ -218,7 +218,7 @@ function precmd {
   hpwd="${hpwd% ### *} ### $cwd"
   echo "$hpwd" >>~/.zsh-history-logs/zsh-history-$(date "+%Y-%m-%d").log
 }
-SUPPRESS_LABEL_WARNING=True
+export SUPPRESS_LABEL_WARNING=True
 
 # bun completions
 [ -s "/home/piontec/.oh-my-zsh/completions/_bun" ] && source "/home/piontec/.oh-my-zsh/completions/_bun"
@@ -226,3 +226,30 @@ SUPPRESS_LABEL_WARNING=True
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# k8s
+export KUBECONFIG=/tmp/.kube.config
+
+# umbrella
+export UMBRELLA_TARGET_DIR=~/work/giantswarm/git/drizzle
+
+PATH="/home/piontec/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/piontec/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/piontec/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/piontec/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/piontec/perl5"; export PERL_MM_OPT;
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+alias icat="kitten icat"
+alias s="kitten ssh"
+alias rg="rg --hyperlink-format=kitty"
+
+# ai tools - claude & gemini
+export PATH="$HOME/.npm-global/bin:$PATH"
