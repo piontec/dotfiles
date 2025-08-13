@@ -1,0 +1,12 @@
+clusterctl:
+  shortCut: i
+  description: clusterctl info
+  dangerous: false
+  scopes:
+    - clusters
+  background: false
+  command: sh
+  args:
+    - -c
+    - "viddy -n 15s 'clusterctl describe cluster --kubeconfig-context $CONTEXT -n $NAMESPACE $NAME
+      --show-conditions all --grouping=false --color'"
