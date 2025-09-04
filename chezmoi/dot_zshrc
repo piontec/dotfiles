@@ -232,6 +232,7 @@ export KUBECONFIG=/tmp/.kube.config
 
 # umbrella
 export UMBRELLA_TARGET_DIR=~/work/giantswarm/git/drizzle
+export UMBRELLA_ROOT_DIR=~/work/giantswarm/git/umbrella
 
 PATH="/home/piontec/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/piontec/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
