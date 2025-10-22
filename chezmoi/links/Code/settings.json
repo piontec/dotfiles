@@ -261,5 +261,8 @@
   "geminicodeassist.project": "",
   "diffEditor.codeLens": true,
   "cSpell.language": "en,pl",
-  "cSpell.languageSettings": []
+  "cSpell.languageSettings": [],
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "chat.checkpoints.showFileChanges": true
 }

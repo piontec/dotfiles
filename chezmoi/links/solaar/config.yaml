@@ -1,9 +1,15 @@
-- 1.1.14-2
+- 1.1.14-4
 - _NAME: Marathon Mouse M705 (M-R0009)
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 0D0E2D27
   _wpid: 101B
 - _NAME: MX Vertical Wireless Mouse
+  _absent: [hi-res-scroll, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert, thumb-scroll-mode,
+    onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi_extended, speed-change, backlight, backlight_level, backlight_duration_hands_out,
+    backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_, brightness_control, per-key-lighting,
+    fn-swap, disable-keyboard-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert,
+    gesture2-params, sidetone, equalizer, adc_power_management]
+  _battery: 4096
   _modelId: B020407BC08A
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 97F304DA
@@ -20,11 +26,6 @@
   _serial: 4D4D79E7
   _wpid: '2011'
 - _NAME: Wireless Mouse MX Master 2S
-  _absent: [hi-res-scroll, lowres-scroll-mode, thumb-scroll-invert, thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed,
-    dpi_extended, speed-change, backlight, backlight_level, backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed,
-    led_control, led_zone_, rgb_control, rgb_zone_, brightness_control, per-key-lighting, fn-swap, persistent-remappable-keys, disable-keyboard-keys, crown-smooth,
-    divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-params, sidetone, equalizer, adc_power_management]
-  _battery: 4096
   _modelId: B01940690000
   _sensitive: {change-host: true, divert-keys: true, dpi: true, gesture2-divert: true, gesture2-gestures: true, hires-scroll-mode: true, hires-smooth-invert: false,
     hires-smooth-resolution: true, reprogrammable-keys: true, scroll-ratchet: true, smart-shift: false}
@@ -62,15 +63,40 @@
   _serial: '00000000'
   _wpid: '4054'
 - _NAME: Wireless Keyboard MK270
-  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert,
-    thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi, dpi_extended, speed-change, backlight, backlight_level,
-    backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_,
-    brightness_control, per-key-lighting, reprogrammable-keys, persistent-remappable-keys, divert-keys, disable-keyboard-keys, crown-smooth, divert-crown,
-    divert-gkeys, m-key-leds, mr-key-led, multiplatform, change-host, gesture2-gestures, gesture2-divert, gesture2-params, sidetone, equalizer, adc_power_management]
-  _battery: 4096
   _modelId: Wireless Keyboard MK270
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 00D49F4B
   _unitId: 00D49F4B
   _wpid: '4023'
   fn-swap: false
+- _NAME: Wireless Keyboard ERGO K860
+  _modelId: B35940880000
+  _sensitive: {change-host: true, disable-keyboard-keys: false, divert-keys: false, multiplatform: false}
+  _serial: E6FD0F32
+  _unitId: E6FD0F32
+  _wpid: '4088'
+  change-host: null
+  disable-keyboard-keys: {1: false, 2: false, 4: false, 8: false, 16: false}
+  divert-keys: {10: 0, 110: 0, 111: 0, 191: 0, 199: 0, 200: 0, 209: 0, 210: 0, 211: 0, 212: 0, 224: 0, 228: 0, 229: 0, 230: 0, 231: 0, 232: 0, 233: 0, 234: 1,
+    235: 0, 236: 0, 256: 0, 257: 0}
+  fn-swap: true
+  multiplatform: 0
+  persistent-remappable-keys: null
+- _NAME: Wireless Keyboard ERGO K860
+  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert,
+    thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi, dpi_extended, speed-change, backlight, backlight_level,
+    backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_,
+    brightness_control, per-key-lighting, reprogrammable-keys, persistent-remappable-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led,
+    gesture2-gestures, gesture2-divert, gesture2-params, sidetone, equalizer, adc_power_management]
+  _battery: 4096
+  _modelId: B35940880000
+  _sensitive: {change-host: false, fn-swap: true}
+  _serial: B3A44EDF
+  _unitId: B3A44EDF
+  _wpid: '4088'
+  change-host: null
+  disable-keyboard-keys: {1: false, 2: false, 4: false, 8: false, 16: false}
+  divert-keys: {10: 0, 110: 0, 111: 0, 191: 0, 199: 0, 200: 0, 209: 0, 210: 0, 211: 0, 212: 0, 224: 0, 228: 0, 229: 0, 230: 0, 231: 0, 232: 0, 233: 0, 234: 0,
+    235: 0, 236: 0, 256: 0, 257: 0}
+  fn-swap: false
+  multiplatform: 0

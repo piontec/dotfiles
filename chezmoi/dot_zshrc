@@ -252,5 +252,9 @@ alias icat="kitten icat"
 alias s="kitten ssh"
 alias rg="rg --hyperlink-format=kitty"
 
+# viddy - better watch
+alias watch=viddy
+
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
