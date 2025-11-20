@@ -176,7 +176,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.jediEnabled": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "sync.forceUpload": true,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
@@ -204,8 +203,8 @@
   "python.defaultInterpreterPath": "/var/lib/flatpak/app/org.freecad.FreeCAD/current/active/files/lib/python3.12",
   "redhat.telemetry.enabled": true,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnType": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "markdown.extension.orderedList.autoRenumber": false,
   "markdown.extension.orderedList.marker": "one",
@@ -264,5 +263,10 @@
   "cSpell.languageSettings": [],
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
-  "chat.checkpoints.showFileChanges": true
+  "chat.checkpoints.showFileChanges": true,
+  "chat.tools.terminal.autoApprove": {
+    "git checkout": true,
+    "cargo run": true
+  },
+  "ruff.configuration": ""
 }
