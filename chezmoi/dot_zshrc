@@ -258,3 +258,8 @@ alias watch=viddy
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# kubeswitch
+source <(switcher init zsh)
+alias sw=switch
+source <(switch completion zsh)
