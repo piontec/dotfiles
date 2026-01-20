@@ -3,6 +3,6 @@ version: v1alpha1
 kubeconfigStores:
   - kind: filesystem
     paths:
-      - ~/tmp/.kube.config
+      - /tmp/.kube.config
       - ~/devel/piontec-github/oci-infra/tf/.kube.config
       - ~/devel/piontec-github/oci-test/tf/.kube.config
