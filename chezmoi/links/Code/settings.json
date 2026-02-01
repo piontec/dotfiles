@@ -268,5 +268,7 @@
     "git checkout": true,
     "cargo run": true
   },
-  "ruff.configuration": ""
+  "ruff.configuration": "",
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.useTerminal": true
 }
