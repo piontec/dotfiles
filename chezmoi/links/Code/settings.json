@@ -270,5 +270,11 @@
   },
   "ruff.configuration": "",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.useTerminal": true
+  "claudeCode.selectedModel": "sonnet",
+  "claudeCode.useTerminal": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal"
+  ],
+  "makefile.configureOnOpen": false
 }
