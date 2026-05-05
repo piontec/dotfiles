@@ -257,8 +257,11 @@ alias watch=viddy
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal"; export ANTHROPIC_BASE_URL="http://localhost:4141/v1"; claude'
 
 # kubeswitch
 source <(switcher init zsh)
 alias sw=switch
 source <(switch completion zsh)
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
