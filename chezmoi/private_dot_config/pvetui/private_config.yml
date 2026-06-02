@@ -1,0 +1,53 @@
+profiles:
+    default:
+        addr: https://pve:8006
+        user: root
+        password: ""
+        token_id: pvetui
+        token_secret: age1:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAySHZlT2ZSaFkrU1dPMGJvNDROVlAvb0c3b3NtYWU4U0ZFakZ6bHZyREhJClFKcW9oUzlMVnNCMGVRa040K1ZkMHFLU2lyLzNHeWUzTTJJVzJJNmtYOFEKLS0tIDh3WkR6U1JPdldZcUFoRTVERGcxNk1xeWNRcWVPMGs1WFA2SmJQTm5RKzgKF8IctZRPvA5qYhG1y4hj5TL8QeR+3Lyn78uKm9XYnnHWo9H6jIz+nwX2QElZxI0LAecCUWhvrzBZlUoNx8RBjtzhqjg=
+        realm: pam
+        api_path: /api2/json
+        insecure: true
+        ssh_user: root
+    work:
+        addr: https://work-proxmox:8006
+        user: workuser
+        password: ""
+        token_id: worktoken
+        token_secret: age1:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhWkhzYUk4dUlxdDFtNHhndXNLcjd3dFhNZ2RqbUF4ZVB3VnVGZVlGWDJrCno0SjB5cGhJeUtyQmlCLzc4azdjNlA3eTJwOS9BbTBxTXVOczlKdkQvd1kKLS0tIDkxbUU5RmRqdTJUMjlGS3J0dkFMb2dzQUVvVVlJMThOcEo3SnNEdVo3S2cKz0TfU+15DkCWwljaQL1ERFfT+5y7X7C8jD5x6gLTE3h2QcMJm+SrOGsH
+        realm: pam
+        api_path: /api2/json
+        insecure: false
+        ssh_user: workuser
+default_profile: default
+debug: true
+cache_dir: /home/piontec/.cache/pvetui
+key_bindings:
+    switch_view: ']'
+    switch_view_reverse: '['
+    nodes_page: Alt+1
+    guests_page: Alt+2
+    tasks_page: Alt+3
+    menu: m
+    global_menu: g
+    shell: s
+    vnc: v
+    refresh: Ctrl+r
+    auto_refresh: a
+    search: /
+    help: '?'
+    quit: q
+theme:
+    name: default
+    colors: {}
+plugins:
+    enabled: []
+addr: https://pve:8006/api2/json
+user: root
+password: ""
+token_id: pvetui
+token_secret: age1:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXMzRMR2xsQ3V2V1FRcDh6UkhTWEpoVThPR1JrUlBTejlrOGRaaTY1L1I0CkhzUjlDTnVaRDNlS3pyTUo4eXRPSlFZWHJKdnVlS1NnK2pjemtNYW54VkEKLS0tIHh6TVhNRjhIUDF3WVNvNURoSHdVeXFDWTdkdkxmSVNYUFhCVzlRaG9FYU0KojlEGt+CImydHfHH/wODeE69AkxnzQ2QjYbft5B0OYLZAEsLbW0+3ZaRhaN99ZjplxVN+BNxS1iCkkE2Fv4ShWouaQY=
+realm: pam
+api_path: /api2/json
+insecure: true
+ssh_user: root
