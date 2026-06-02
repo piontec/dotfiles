@@ -164,6 +164,7 @@ alias vim=nvim
 alias open=xdg-open
 alias opsctl='OPSCTL_OPSGENIE_TOKEN=`op item get OPSCTL_OPSGENIE_TOKEN --vault Employee --fields notesPlain` OPSCTL_GITHUB_TOKEN=`op item get github_private_token --vault Employee --fields password --reveal` PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin $HOME/bin/opsctl'
 alias gg="git graph"
+alias gw="git worktree"
 alias gcrb="git branch -r | awk \"{print \\\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\\$1}\" | xargs git branch -D"
 alias gwls="git worktree list"
 unalias cp
