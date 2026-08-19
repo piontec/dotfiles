@@ -137,7 +137,7 @@
             "name": "Focus on a point in the far distance"
         }
     ],
-    "shortcut_disable_time": 7,
+    "shortcut_disable_time": 1,
     "shortcut_postpone": 65,
     "shortcut_skip": 9,
     "strict_break": false

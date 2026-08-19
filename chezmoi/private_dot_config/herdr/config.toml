@@ -3,10 +3,10 @@ onboarding = false
 [keys]
 new_tab = ["ctrl+t"]
 close_tab = ["ctrl+w"]
-next_tab = ["ctrl+l"]
-previous_tab = ["ctrl+h"]
-next_workspace = ["ctrl+j"]
-previous_workspace = ["ctrl+k"]
+next_tab = ["ctrl+u"]
+previous_tab = ["ctrl+i"]
+next_workspace = ["ctrl+y"]
+previous_workspace = ["ctrl+o"]
 new_workspace = ["ctrl+n"]
 switch_tab = "alt+1..9"
 # switch_workspace = "ctrl+shift+1..9"
@@ -19,22 +19,22 @@ command = "herdr-navigator.open"
 description = "jump to anything"
 
 [[keys.command]]
-key = "ctrl+y"
+key = "ctrl+h"
 type = "plugin_action"
 command = "herdr-splits.nav-left"
 
 [[keys.command]]
-key = "ctrl+u"
+key = "ctrl+j"
 type = "plugin_action"
 command = "herdr-splits.nav-down"
 
 [[keys.command]]
-key = "ctrl+i"
+key = "ctrl+k"
 type = "plugin_action"
 command = "herdr-splits.nav-up"
 
 [[keys.command]]
-key = "ctrl+o"
+key = "ctrl+l"
 type = "plugin_action"
 command = "herdr-splits.nav-right"
 
