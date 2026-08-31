@@ -15,7 +15,7 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["bun", "bun_packages", "node", "containers", "helm"]
+disable = ["bun", "bun_packages", "node", "containers", "helm", "cursor-agent", "antigravity"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
