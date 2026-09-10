@@ -15,7 +15,7 @@ pre_sudo = true
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["bun", "bun_packages", "node", "containers", "helm", "cursor_agent", "yazi", "antigravity"]
+disable = ["bun", "bun_packages", "node", "containers", "helm", "cursor_agent", "yazi", "antigravity", "platformio_core"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
