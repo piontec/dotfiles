@@ -203,7 +203,6 @@ export NVM_DIR="$HOME/.nvm"
 # eval "$(atuin init zsh --disable-up-arrow)"
 #
 . $(pack completion --shell zsh)
-source ~/.openai_api_key
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
 
 function precmd {
@@ -268,3 +267,7 @@ alias sw=switch
 source <(switch completion zsh)
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/piontec/.local/bin:$PATH"
