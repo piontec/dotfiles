@@ -258,8 +258,9 @@ alias watch=viddy
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && claude'
-alias claude-personal-proxy='export ANTHROPIC_BASE_URL=http://localhost:4141 ANTHROPIC_AUTH_TOKEN=dummy ANTHROPIC_MODEL=claude-sonnet-4.6 ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-4.6 ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-4.5 DISABLE_NON_ESSENTIAL_MODEL_CALLS=1 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 CLAUDE_CODE_ATTRIBUTION_HEADER=0 CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=false CLAUDE_CODE_DISABLE_TERMINAL_TITLE=true CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0 CLAUDE_PLUGIN_ENABLE_QUESTION_RULES=true CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && claude'
+alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 headroom wrap claude'
+alias claude-gs='echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 claude'
+alias oc='nice -n 10 headroom wrap opencode'
 
 # kubeswitch
 source <(switcher init zsh)
@@ -268,6 +269,10 @@ source <(switch completion zsh)
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
-
 # Added by Antigravity CLI installer
 export PATH="/home/piontec/.local/bin:$PATH"
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+export OPENCODE_ENABLE_EXA=1
+# <<< oh-my-opencode-slim background subagents <<<
