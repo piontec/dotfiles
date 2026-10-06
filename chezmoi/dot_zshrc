@@ -258,9 +258,9 @@ alias watch=viddy
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 headroom wrap claude'
+alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 claude'
 alias claude-gs='echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 claude'
-alias oc='nice -n 10 headroom wrap opencode'
+alias oc='nice -n 10 opencode'
 
 # kubeswitch
 source <(switcher init zsh)
