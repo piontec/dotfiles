@@ -60,6 +60,11 @@ command = "herdr-splits.resize-right"
 
 [ui.toast]
 delivery = "terminal"
+[[keys.command]]
+
+key = "alt+i"
+type = "plugin_action"
+command = "codeforbreakfast.beady-eye.open"
 
 [theme]
 name = "dracula"
