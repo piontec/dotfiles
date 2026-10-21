@@ -258,9 +258,11 @@ alias watch=viddy
 # ai tools - claude & gemini
 export PATH="$HOME/.npm-global/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 claude'
-alias claude-gs='echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && nice -n 10 claude'
-alias oc='nice -n 10 opencode'
+
+alias claude-trdr='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && HERDR_AGENT=claude-trdr systemd-run --user --scope --quiet --slice=dev.slice claude'
+alias claude-personal='export CLAUDE_CONFIG_DIR="$HOME/.claude-personal" && echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && HERDR_AGENT=claude-personal nice -n 10 claude'
+alias claude-gs='echo "CLAUDE PROFILE: $CLAUDE_CONFIG_DIR" && HERDR_AGENT=claude-trdr nice -n 10 claude'
+alias oc='systemd-run --user --scope --quiet --slice=dev.slice opencode'
 
 # kubeswitch
 source <(switcher init zsh)
