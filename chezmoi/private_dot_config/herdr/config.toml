@@ -97,7 +97,7 @@ rows = [
   ["terminal_title_stripped"],
   [ { token = "agent", rules = [
         { equals = "claude-gs", fg = "#F80" }, 
-        { equals = "claude-personal", fg = "#009" }
+        { equals = "claude-personal", fg = "#69F" }
     ]}, 
     { token = "machine", dim = true, fg = "#fff", rules = [{ equals = "Local", fg = "#999" }, { equals = "Fedora", ignore_case = true, fg = "#51a2da" }] }],
 ]
